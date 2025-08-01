@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="rootContainer" alignment="CENTER" spacing="20.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.samesame.controller.MainController">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+   
+   <!-- Header -->
+   <VBox alignment="CENTER" spacing="5.0">
+      <Label styleClass="title" text="SameSame">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label styleClass="subtitle" text="Secure Password Comparator">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </VBox>
+   
+   <!-- Main Content -->
+   <VBox alignment="CENTER" spacing="15.0" styleClass="content-area">
+      
+      <!-- First Password Input -->
+      <VBox spacing="5.0">
+         <Label styleClass="field-label" text="Enter first password:">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+         <StackPane>
+            <PasswordField fx:id="password1Field" promptText="Enter your password" styleClass="password-field" />
+            <TextField fx:id="visiblePassword1Field" promptText="Enter your password" styleClass="password-field" visible="false" />
+         </StackPane>
+      </VBox>
+      
+      <!-- Second Password Input -->
+      <VBox spacing="5.0">
+         <Label styleClass="field-label" text="Confirm password:">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+         <StackPane>
+            <PasswordField fx:id="password2Field" promptText="Confirm your password" styleClass="password-field" />
+            <TextField fx:id="visiblePassword2Field" promptText="Confirm your password" styleClass="password-field" visible="false" />
+         </StackPane>
+      </VBox>
+      
+      <!-- Show Passwords Checkbox -->
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <CheckBox fx:id="showPasswordsCheckBox" styleClass="show-password-checkbox" text="Show passwords" />
+      </HBox>
+      
+      <!-- Password Strength Indicator -->
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <Label fx:id="strengthLabel" styleClass="strength-label" />
+      </HBox>
+      
+      <!-- Result Display -->
+      <VBox alignment="CENTER" spacing="10.0">
+         <Label fx:id="resultLabel" styleClass="result-label" wrapText="true">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+      </VBox>
+      
+      <!-- Action Buttons -->
+      <HBox alignment="CENTER" spacing="15.0">
+         <Button fx:id="compareButton" onAction="#handleCompareAction" styleClass="primary-button" text="Compare">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="clearButton" onAction="#handleClearAction" styleClass="secondary-button" text="Clear">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+      </HBox>
+   </VBox>
+   
+   <!-- Footer -->
+   <VBox alignment="CENTER" spacing="5.0">
+      <Separator />
+      <Label styleClass="footer-text" text="Secure • Real-time • Privacy-focused">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </VBox>
+</VBox>

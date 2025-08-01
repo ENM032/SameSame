@@ -180,6 +180,90 @@ The tests cover:
 - Secure random number generation for any cryptographic operations
 - Protection against common attack vectors
 
+## JavaFX GUI Installation & Usage
+
+### Prerequisites
+- Java 24.0.2 or higher
+- JavaFX SDK 24.0.2 (separate download required)
+
+### Installing JavaFX
+
+1. **Download JavaFX SDK**:
+   - Visit [OpenJFX Downloads](https://openjfx.io/)
+   - Download JavaFX SDK 24.0.2 for your operating system
+   - Extract to a directory (e.g., `C:\Program Files\javafx-sdk-24.0.2`)
+
+2. **No Environment Variables Required**:
+   - The provided `run-gui.bat` script handles all JavaFX configuration automatically
+   - No need to modify system PATH or set JAVAFX_HOME
+
+### Running the JavaFX GUI
+
+#### Option 1: Using the Automated Script (Recommended)
+```bash
+# Simply run the provided script
+.\run-gui.bat
+```
+
+The script will:
+- Verify JavaFX installation
+- Compile Java source files
+- Copy resources (FXML and CSS)
+- Launch the GUI application
+
+#### Option 2: Manual Commands
+
+**Compile:**
+```bash
+javac -d build\classes --module-path "C:\Program Files\javafx-sdk-24.0.2\lib" --add-modules javafx.controls,javafx.fxml -cp "src\main\java" src\main\java\com\samesame\*.java src\main\java\com\samesame\controller\*.java src\main\java\com\samesame\service\*.java
+```
+
+**Copy Resources:**
+```bash
+xcopy "src\main\resources" "build\classes" /E /I /Y
+```
+
+**Run:**
+```bash
+java --module-path "C:\Program Files\javafx-sdk-24.0.2\lib" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics -cp build\classes com.samesame.PasswordComparatorApp
+```
+
+### JavaFX GUI Features
+
+- **Modern Interface**: Clean, intuitive design with JavaFX controls
+- **Real-time Feedback**: Instant password comparison results
+- **Security Indicators**: Visual feedback for password strength
+- **Responsive Design**: Adapts to different window sizes
+- **Accessibility**: Keyboard navigation and screen reader support
+
+### Troubleshooting
+
+**Common Issues:**
+
+1. **"JavaFX not found" Error**:
+   - Verify JavaFX SDK is extracted to the correct path
+   - Update the `JAVAFX_PATH` in `run-gui.bat` if using a different location
+
+2. **"Module not found" Error**:
+   - Ensure you downloaded the full JavaFX SDK, not just the runtime
+   - Check that the `lib` folder exists in your JavaFX installation
+
+3. **Compilation Errors**:
+   - Verify Java 24.0.2 is installed and accessible
+   - Check that all source files are present in the `src` directory
+
+4. **Warnings About Deprecated Methods**:
+   - These are internal JavaFX warnings and can be safely ignored
+   - They don't affect application functionality
+
+### Customizing JavaFX Path
+
+If you installed JavaFX to a different location, edit `run-gui.bat`:
+```batch
+:: Change this line to your JavaFX installation path
+set JAVAFX_PATH=C:\Your\Custom\Path\javafx-sdk-24.0.2\lib
+```
+
 ## Future Enhancements
 
 ### Mobile App Adaptation
