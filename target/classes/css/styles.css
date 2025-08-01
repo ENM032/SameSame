@@ -1,0 +1,224 @@
+/* Modern CSS Styles for SameSame Password Comparator */
+
+/* Root styling */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Main container */
+#rootContainer {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-border-color: #e1e5e9;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+
+/* Typography */
+.title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #6c757d;
+    -fx-font-style: italic;
+}
+
+.field-label {
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+}
+
+.footer-text {
+    -fx-text-fill: #adb5bd;
+}
+
+/* Content area */
+.content-area {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+}
+
+/* Password fields */
+.password-field {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 40px;
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 6px;
+    -fx-border-color: #ced4da;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-padding: 0 12px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #6c757d;
+}
+
+.password-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #007bff;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.25), 4, 0, 0, 0);
+}
+
+/* Checkbox styling */
+.show-password-checkbox {
+    -fx-text-fill: #495057;
+    -fx-font-size: 12px;
+}
+
+.show-password-checkbox .box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ced4da;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+}
+
+.show-password-checkbox:selected .box {
+    -fx-background-color: #007bff;
+    -fx-border-color: #007bff;
+}
+
+.show-password-checkbox:selected .mark {
+    -fx-background-color: #ffffff;
+}
+
+/* Buttons */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #007bff, #0056b3);
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 10px 20px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #0056b3, #004085);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+}
+
+.primary-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #004085, #002752);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.secondary-button {
+    -fx-background-color: linear-gradient(to bottom, #6c757d, #545b62);
+    -fx-text-fill: white;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-padding: 10px 20px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+.secondary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #545b62, #383d41);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+}
+
+.secondary-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #383d41, #1d2124);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+/* Result label styling */
+.result-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-min-height: 20px;
+}
+
+.result-label.match {
+    -fx-text-fill: #155724;
+    -fx-background-color: #d4edda;
+    -fx-border-color: #c3e6cb;
+    -fx-border-width: 1px;
+}
+
+.result-label.no-match {
+    -fx-text-fill: #721c24;
+    -fx-background-color: #f8d7da;
+    -fx-border-color: #f5c6cb;
+    -fx-border-width: 1px;
+}
+
+/* Password strength styling */
+.strength-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+
+.strength-label.weak {
+    -fx-text-fill: #721c24;
+    -fx-background-color: #f8d7da;
+    -fx-border-color: #f5c6cb;
+    -fx-border-width: 1px;
+}
+
+.strength-label.medium {
+    -fx-text-fill: #856404;
+    -fx-background-color: #fff3cd;
+    -fx-border-color: #ffeaa7;
+    -fx-border-width: 1px;
+}
+
+.strength-label.strong {
+    -fx-text-fill: #155724;
+    -fx-background-color: #d4edda;
+    -fx-border-color: #c3e6cb;
+    -fx-border-width: 1px;
+}
+
+.strength-label.very-strong {
+    -fx-text-fill: #004085;
+    -fx-background-color: #cce7ff;
+    -fx-border-color: #99d6ff;
+    -fx-border-width: 1px;
+}
+
+/* Separator styling */
+.separator {
+    -fx-background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .password-field {
+        -fx-pref-width: 250px;
+    }
+    
+    #rootContainer {
+        -fx-padding: 20px;
+    }
+}
+
+/* Animation effects */
+.password-field {
+    -fx-transition: all 0.2s ease;
+}
+
+.primary-button, .secondary-button {
+    -fx-transition: all 0.1s ease;
+}
+
+/* Focus indicators for accessibility */
+.password-field:focused,
+.primary-button:focused,
+.secondary-button:focused,
+.show-password-checkbox:focused {
+    -fx-effect: dropshadow(gaussian, rgba(0,123,255,0.5), 6, 0, 0, 0);
+}
